@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Search Bar</title>
+    <link class="theme-style-sheet" rel="stylesheet" type="text/css" href="{style_dir_rel}/table_dark.css" media="(prefers-color-scheme: dark)">
+    <link class="theme-style-sheet" rel="stylesheet" type="text/css" href="{style_dir_rel}/table_light.css" media="(prefers-color-scheme: light)">
+    <script src="{script_file_rel}"></script>
+</head>
+<body>
+    {back_button_html}
+    <div id="top-right-corner-container">
+        <button id="toggle-theme-button" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+    <div class="content-container">
+        <h1>Help - Search Bar</h1>
+        <p>This application provides a table search utility that allows users to filter rows based on complex queries with support for logical operators (AND/OR) and column-specific searches. Below is an explanation of how to use the search functionality.</p>
+
+        <div class="content-section">
+            <h2>Features</h2>
+            <ul>
+                <li><strong>Search Across All Columns:</strong> Enter a query to search across all table columns.</li>
+                <li><strong>Column-Specific Search:</strong> Use square brackets ([index]) to limit searches to a specific column.</li>
+                <li><strong>Logical Operators:</strong> Combine terms with AND or OR for more complex queries.</li>
+                <li><strong>Highlight Matching Terms:</strong> Found terms are highlighted in the table for clarity.</li>
+                <li><strong>Dynamic Query Parsing:</strong> The system supports advanced search patterns with regular expressions.</li>
+                <li><strong>Case-Insensitive Matching:</strong> Searches are not case-sensitive.</li>
+                <li><strong>Neighbor Expansion:</strong> Include rows above and below matching results for added context.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>How to Use</h2>
+            <p>Follow these simple steps to filter your table:</p>
+            <ol>
+                <li><strong>Enter Query:</strong> Type a search query into the input field with the desired syntax.</li>
+                <li><strong>Set Neighbors (Optional):</strong> Use the "Neighbors" input field to specify how many rows above and below matching results should also be displayed.</li>
+                <li><strong>Trigger Search:</strong> The filtering is applied immediately when you hit Enter.</li>
+                <li><strong>Review Results:</strong> Matching rows, along with specified neighbors, remain visible, and matching terms are highlighted.</li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h2>Search Syntax</h2>
+            
+            <div class="subsection">
+                <h3>Basic Search</h3>
+                <p>Enter a keyword into the search bar to filter rows containing that term in any column.</p>
+                <p><strong>Example:</strong></p>
+                <div class="monospace-box">
+                    word1
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Column-Specific Search</h3>
+                <p>To search in a specific column, use square brackets with the column index.</p>
+                <p><strong>Example:</strong></p>
+                <div class="monospace-box">
+                    word1[2]
+                </div>
+                <p>This searches for "word1" only in column 2 (column indices start at 0).</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Logical Operators</h3>
+                <p>Combine search terms using AND or OR. Note: Logical operators must be in uppercase.</p>
+                <p><strong>Example 1:</strong></p>
+                <div class="monospace-box">
+                    word1 AND word2
+                </div>
+                <p>This filters rows containing both "word1" <strong>AND</strong> "word2".</p>
+                <p><strong>Example 2:</strong></p>
+                <div class="monospace-box">
+                    word1[1] OR word2[2]
+                </div>
+                <p>This filters rows where "word1" appears in column 1 <strong>OR</strong> "word2" appears in column 2.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Neighbor Expansion</h3>
+                <p>To include rows above and below matching results, specify the number of neighbors in the "Neighbors" input field.</p>
+                <p><strong>Example:</strong></p>
+                <div class="monospace-box">
+                    Query: word1<br>
+                    Neighbors: 1<br>
+                </div>
+                <p>With this configuration, rows matching "word1" display along with one row above and one row below each matching row. If no number is specified in the "Neighbors" field, only the matching rows display.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Parentheses for Grouping</h3>
+                <p>Use parentheses to group terms for more complex queries.</p>
+                <p><strong>Example:</strong></p>
+                <div class="monospace-box">
+                    (word1 AND word2) OR word3
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

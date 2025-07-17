@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-TM - About</title>
+    <link class="theme-style-sheet" rel="stylesheet" type="text/css" href="{style_dir_rel}/table_dark.css" media="(prefers-color-scheme: dark)">
+    <link class="theme-style-sheet" rel="stylesheet" type="text/css" href="{style_dir_rel}/table_light.css" media="(prefers-color-scheme: light)">
+    <script src="{script_file_rel}"></script>
+</head>
+<body>
+    {back_button_html}
+    <div id="top-right-corner-container">
+        <button id="toggle-theme-button" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+    <br>
+    <div class="content-container">
+        <h1>HTML-TM - About</h1>
+
+        <p>HTML-TM (HyperText Markup Language for Text Mining) is a tool designed to facilitate the exploration and analysis of large text datasets. It provides an interactive and user-friendly interface for navigating through words, documents, and their relationships within the corpus. Below, the key components and functionalities of the HTML-TM tool are described.</p>
+
+        <h2>Key Components of HTML-TM</h2>
+
+        <h3>1. WORDS.html</h3>
+        <p>The WORDS.html file serves as the primary entry point for exploring words within the dataset. It contains a structured table with the following columns:</p>
+        <ul>
+            <li><strong>#:</strong> The index number of the word in the dataset, providing a unique identifier for each entry.</li>
+            <li><strong>Word:</strong> The specific word from the dataset being analyzed.</li>
+            <li><strong>Occ.:</strong> The number of occurrences of the word across documents, indicating how many documents contain the word.</li>
+            <li><strong>Related Words:</strong> A list of the top 10 words most closely related to the target word, based on cosine similarity.</li>
+            <li><strong>Related Doc.:</strong> A link to a separate page listing documents (papers) most closely associated with the word, based on cosine similarity. For more details about this page, see the "Related Documents Page" section below.</li>
+            <li><strong>Word Tree:</strong> A hierarchical visualization of the 30 most related terms for the word, providing a structured overview of semantic connections.</li>
+            <li><strong>Year Plot:</strong> A graphical representation of the word's usage over time, helping users identify trends and patterns.</li>
+        </ul>
+
+        <h3>2. TEXTS.html</h3>
+        <p>The TEXTS.html file is designed for exploring documents within the corpus. It includes a table with the following columns:</p>
+        <ul>
+            <li><strong>#:</strong> The index number of the document in the dataset, serving as a unique identifier.</li>
+            <li><strong>Title:</strong> The title of the document (paper), providing a quick reference to its content.</li>
+            <li><strong>Year:</strong> The publication year of the document.</li>
+            <li><strong>Related Doc.:</strong> A link to a separate page listing documents most similar to the current one, based on cosine similarity. For more details about this page, see the "Related Documents Page" section below.</li>
+            <li><strong>PMID:</strong> The PubMed ID of the related document, linked to its corresponding page on PubMed for easy access.</li>
+        </ul>
+
+        <h3>Related Documents Page</h3>
+        <p>Both WORDS.html and TEXTS.html direct users to a <strong>Related Documents</strong> page when clicking on the "Related Doc." link. This page contains a table with the following columns:</p>
+        <ul>
+            <li><strong>#:</strong> The index number of the related document.</li>
+            <li><strong>Rank:</strong> The ranking of the document based on its similarity score to the target word or document.</li>
+            <li><strong>Similarity:</strong> A numerical score indicating the degree of similarity between the target and the related document, calculated using cosine similarity.</li>
+            <li><strong>Title + Abs.:</strong> The title of the related document, accompanied by its full abstract.</li>
+            <li><strong>Year:</strong> The publication year of the document.</li>
+            <li><strong>PMID:</strong> The PubMed ID of the related document, linked to its corresponding page on PubMed for easy access.</li>
+        </ul>
+
+        <h2>Search Functionality</h2>
+        <p>HTML-TM provides a table search tool that allows users to filter rows using complex queries, including logical operators (AND/OR), column-specific searches, and regular expressions. Detailed information can be accessed via the Help button located next to the search button on the WORDS.html and TEXTS.html pages.</p>
+
+        <h2>Authors and Institution</h2>
+        <p>The HTML-TM tool is developed by:</p>
+        <ul>
+            <li><strong>Roberto T. Raittz</strong><sup>1,2</sup></li>
+            <li><strong>Diogo de J. S. Machado</strong><sup>1,2</sup></li>
+        </ul>
+        <p>Affiliations:</p>
+        <ol>
+            <li><strong>Laboratory of Artificial Intelligence Applied to Bioinformatics, Federal University of Paraná</strong>, Curitiba, PR, Brazil</li>
+            <li><strong>Graduate Program in Bioinformatics, Federal University of Paraná</strong>, Curitiba, PR, Brazil</li>
+        </ol>
+    </div>
+</body>
+</html>
