@@ -21,8 +21,8 @@ along with TXTree. If not, see <https://www.gnu.org/licenses/>.
 from setuptools import setup, find_packages
 from datetime import datetime
 
-# Get current date in YYYY.MM.DD format
-current_date = datetime.now().strftime("%Y.%m.%d")
+# Get current date in YYYYMMDD format
+current_date = datetime.now().strftime("%Y%m%d")
 
 setup(
     name='txtree',
